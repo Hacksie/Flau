@@ -1,0 +1,118 @@
+.item {
+    height: 2.4em;
+    line-height: 3em;
+    vertical-align: middle;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    display: flex;
+    font-size: 1.2rem;
+}
+
+.stage {
+    border-right: 1px solid rgb(236, 240, 246);
+}
+
+.stage:last-child {
+    border: none;
+}
+
+.selected {
+    border: 3px solid rgb(236, 240, 246);
+}
+
+.hidden {
+    display: none;
+}
+
+.check {
+    display: inline-flex;
+    border: none;
+    border-radius: 0.5em;
+    width: 2em;
+    height: 2em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    margin: auto 0;
+    line-height: 1em;
+}
+
+.itemDesc {
+    height: 1.5em;
+    margin-left: 0.33em;
+    text-align: left;
+    flex-grow: 1;
+    line-height: 28px;
+    margin: auto 0.33em;
+    display: block;
+    border: 1px dashed transparent;
+    padding: 0;
+}
+
+input.itemDesc {
+    border: 1px dashed #666 !important;
+    background: none;
+}
+
+.item button {
+    height: 1.5em;
+    width: 1.5em;
+    background: none;
+    margin: auto 0.33em;
+    padding: 0;
+    line-height: 1.2em;
+}
+
+.item button:hover {
+    border: 1px solid rgb(52, 58, 64);
+}
+
+.item .prev {
+    width: 1.5em;
+    height: 1.5em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    margin: auto 0;
+    line-height: 1em;
+    stroke: #666;
+}
+
+.item .prev:hover {
+    content: url(https://unpkg.com/ionicons@5.1.2/dist/svg/arrow-undo-outline.svg);
+}
+
+.stage:nth-child(1) .check {
+    /*border: 1px dashed rgb(52, 58, 64);*/
+    content: url(https://unpkg.com/ionicons@5.1.2/dist/svg/ellipse-outline.svg);
+}
+
+.stage:nth-child(1) .check:hover {
+    /*border: 1px dashed rgb(52, 58, 64);*/
+    content: url(https://unpkg.com/ionicons@5.1.2/dist/svg/play-circle-outline.svg);
+}
+
+.stage:nth-child(2) .check {
+    /*border: 1px solid rgb(52, 58, 64);
+    background: #ccc;*/
+    content: url(https://unpkg.com/ionicons@5.1.2/dist/svg/time-outline.svg);
+}
+
+.stage:nth-child(2) .check:hover {
+    /*border: 1px dashed rgb(52, 58, 64);*/
+    content: url(https://unpkg.com/ionicons@5.1.2/dist/svg/play-circle-outline.svg);
+}
+
+.stage:nth-child(3) .check {
+    /*border: 1px solid rgb(52, 58, 64);
+    background: rgb(52, 58, 64);*/
+    content: url(https://unpkg.com/ionicons@5.1.2/dist/svg/checkmark-circle-outline.svg);
+}
+
+.stage:nth-child(3) .check:hover {
+    /*border: 1px dashed rgb(52, 58, 64);*/
+    content: url(https://unpkg.com/ionicons@5.1.2/dist/svg/ellipse-outline.svg);
+}
+
+h1 {
+    color: rgb(52, 58, 64);
+    font-size: 2em;
+}
