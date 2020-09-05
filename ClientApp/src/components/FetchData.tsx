@@ -6,13 +6,13 @@ import { ApplicationState } from '../store';
 import * as WeatherForecastsStore from '../store/WeatherForecasts';
 
 // At runtime, Redux will merge together...
-type WeatherForecastProps =
+type FetchDataProps =
   WeatherForecastsStore.WeatherForecastsState // ... state we've requested from the Redux store
   & typeof WeatherForecastsStore.actionCreators // ... plus action creators we've requested
-  & RouteComponentProps<{ startDateIndex: string }>; // ... plus incoming routing parameters
+  & RouteComponentProps<{ id: string }>; // ... plus incoming routing parameters
 
 
-class FetchData extends React.PureComponent<WeatherForecastProps> {
+class FetchData extends React.PureComponent<FetchDataProps> {
   // This method is called when the component is first added to the document
   public componentDidMount() {
     this.ensureDataFetched();
@@ -35,8 +35,8 @@ class FetchData extends React.PureComponent<WeatherForecastProps> {
   }
 
   private ensureDataFetched() {
-    const startDateIndex = parseInt(this.props.match.params.startDateIndex, 10) || 0;
-    this.props.requestWeatherForecasts(startDateIndex);
+    const id = parseInt(this.props.match.params.id, 10) || 0;
+    this.props.requestWeatherForecasts(id);
   }
 
   private renderForecastsTable() {
@@ -65,8 +65,8 @@ class FetchData extends React.PureComponent<WeatherForecastProps> {
   }
 
   private renderPagination() {
-    const prevStartDateIndex = (this.props.startDateIndex || 0) - 5;
-    const nextStartDateIndex = (this.props.startDateIndex || 0) + 5;
+    const prevStartDateIndex = (this.props.id || 0) - 5;
+    const nextStartDateIndex = (this.props.id || 0) + 5;
 
     return (
       <div className="d-flex justify-content-between">

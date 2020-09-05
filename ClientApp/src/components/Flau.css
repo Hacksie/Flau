@@ -24,18 +24,6 @@
     display: none;
 }
 
-.check {
-    display: inline-flex;
-    border: none;
-    border-radius: 0.5em;
-    width: 2em;
-    height: 2em;
-    padding-left: 0.25em;
-    padding-right: 0.25em;
-    margin: auto 0;
-    line-height: 1em;
-}
-
 .itemDesc {
     height: 1.5em;
     margin-left: 0.33em;
@@ -80,37 +68,35 @@ input.itemDesc {
     content: url(https://unpkg.com/ionicons@5.1.2/dist/svg/arrow-undo-outline.svg);
 }
 
-.stage:nth-child(1) .check {
-    /*border: 1px dashed rgb(52, 58, 64);*/
+.circle {
     content: url(https://unpkg.com/ionicons@5.1.2/dist/svg/ellipse-outline.svg);
 }
 
-.stage:nth-child(1) .check:hover {
-    /*border: 1px dashed rgb(52, 58, 64);*/
-    content: url(https://unpkg.com/ionicons@5.1.2/dist/svg/play-circle-outline.svg);
-}
-
-.stage:nth-child(2) .check {
-    /*border: 1px solid rgb(52, 58, 64);
-    background: #ccc;*/
+.time {
     content: url(https://unpkg.com/ionicons@5.1.2/dist/svg/time-outline.svg);
 }
 
-.stage:nth-child(2) .check:hover {
-    /*border: 1px dashed rgb(52, 58, 64);*/
-    content: url(https://unpkg.com/ionicons@5.1.2/dist/svg/play-circle-outline.svg);
-}
-
-.stage:nth-child(3) .check {
-    /*border: 1px solid rgb(52, 58, 64);
-    background: rgb(52, 58, 64);*/
+.check {
     content: url(https://unpkg.com/ionicons@5.1.2/dist/svg/checkmark-circle-outline.svg);
 }
 
-.stage:nth-child(3) .check:hover {
-    /*border: 1px dashed rgb(52, 58, 64);*/
-    content: url(https://unpkg.com/ionicons@5.1.2/dist/svg/ellipse-outline.svg);
+.indicator {
+    display: inline-flex;
+    border: none;
+    border-radius: 0.5em;
+    width: 2em;
+    height: 2em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    margin: auto 0;
+    line-height: 1em;
 }
+
+
+/*
+.indicator:hover {
+    content: url(https://unpkg.com/ionicons@5.1.2/dist/svg/play-circle-outline.svg);
+}*/
 
 h1 {
     color: rgb(52, 58, 64);

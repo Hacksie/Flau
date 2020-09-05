@@ -10,6 +10,7 @@ export interface Flau {
 }
 
 export interface FlauItem {
+    parentId: number | undefined;
     id: number;
     summary: string;
     stageId: number;
@@ -49,7 +50,7 @@ export const actionCreators = {
 
 export const reducer: Reducer<Flau> = (state: Flau | undefined, incomingAction: Action): Flau => {
     if (state === undefined) {
-        return { items: [{ id: 0, summary: "Test", stageId: 0, children: [] }, { id: 1, summary: "Test1", stageId: 2, children: [] }], selectedId: 0 };
+        return { items: [{ parentId: undefined, id: 0, summary: "Test", stageId: 0, children: [] }, { parentId: undefined, id: 1, summary: "Test1", stageId: 2, children: [] }], selectedId: 0 };
     }
 
     var newFlau = { ...state };
@@ -69,6 +70,7 @@ export const reducer: Reducer<Flau> = (state: Flau | undefined, incomingAction: 
                 var right = summary.slice(action.end, summary.length);
 
                 var newItem: FlauItem = {
+                    parentId : selectedItem.parentId,
                     id :newId,
                     stageId :selectedItem.stageId,   
                     summary:right,
@@ -98,8 +100,6 @@ export const reducer: Reducer<Flau> = (state: Flau | undefined, incomingAction: 
                 }
             }
             break;
-        //console.log("Test2", state.stageId);
-        //return {...state, stageId: (state.stageId < 2 ? state.stageId + 1 : state.stageId) };
         case 'PREV':
 
             newFlau.items = state.items.slice();
@@ -112,8 +112,6 @@ export const reducer: Reducer<Flau> = (state: Flau | undefined, incomingAction: 
                 return newFlau;
             }
             break;
-        //console.log("Test3");
-        //return { id: state.id, summary : state.summary, stageId: state.stageId > 0 ? state.stageId - 1: state.stageId, children : state.children };
         default:
             return state;
     }

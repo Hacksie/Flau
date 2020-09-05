@@ -4,6 +4,7 @@ import * as Flau from './Flau';
 import * as Stages from './Stages';
 // The top-level state object
 export interface ApplicationState {
+    currentRoot: number | undefined;
     counter: Counter.CounterState | undefined;
     weatherForecasts: WeatherForecasts.WeatherForecastsState | undefined;
     flau: Flau.Flau | undefined;
